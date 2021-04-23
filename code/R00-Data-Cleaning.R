@@ -35,7 +35,8 @@ sud <- sud %>%
     subsgrps_n == 1 ~ "Alc-Marij-Disorder",
     subsgrps_n == 2 ~ "Other-Drugs",
     subsgrps_n == 3 ~ "Opirate-Disorder",
-    TRUE ~ NA_character_)) %>%
+    TRUE ~ NA_character_
+  )) %>%
   mutate_if(is.character, as.factor)
 
 # Check for missing values
