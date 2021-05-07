@@ -33,7 +33,6 @@ ds_screener_all <- function(data, var) {
   # var - a column name (character) in data summary info will be produced for
   # Output: summary statistics and plots from the descriptr package
 
-
   # We utilize the descriptr package to produce summary statistics
   # we can change what columns we want to produce summary stats
   descriptr::ds_summary_stats(

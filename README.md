@@ -12,7 +12,7 @@
 
 ## Description
 
-This repository was built to represent an example code repository for data analysis in R. This repository is utilized as reference in Best Practices in Scientific Computing (Sanchez et al. Under Review). Following the format of this repository for your analyses will lead to painless QA. 
+This repository was built to represent an example code repository for data analysis in R. This repository is utilized as reference in Best Practices in Scientific Computing (Sanchez et al., Under Review). Following the format of this repository for your analyses will lead to painless QA. 
 
 ## Installation/Setup Instructions
 
@@ -90,6 +90,8 @@ source("code/run_full.R")
 cd code
 R CMD BATCH run_full.R run_full_output.Rout
 ```
+
+Alternatively you can interactively run through the analysis file line-by-line. Start with R00-Data-Cleaning.R and follow the RXX series in order. 
 
 ## Authors
 
