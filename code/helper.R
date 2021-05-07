@@ -30,20 +30,19 @@ ds_screener_all <- function(data, var) {
   # Description: utilize descriptr to show summary stats by variables
   # Input:
   # data - a tibble or data.frame
-  # var - a column name in data that summary info will be produced for
-  # g_var - the grouping variable representing the grouping variable in data
+  # var - a column name (character) in data summary info will be produced for
   # Output: summary statistics and plots from the descriptr package
 
 
   # We utilize the descriptr package to produce summary statistics
   # we can change what columns we want to produce summary stats
-  ds_summary_stats(
+  descriptr::ds_summary_stats(
     data,
     var
   )
 
   # Frequency table - set bins - produce histogram
-  baseline_outcome <- ds_freq_table(data,
+  baseline_outcome <- descriptr::ds_freq_table(data,
     var,
     bins = 7
   )

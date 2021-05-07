@@ -1,4 +1,16 @@
-# code-qa: An example repository for proper quality assurance
+# code-qa: An example data analysis repository
+
+## Table of Contents
+
+* Description
+* Installation Instructions
+* Setup 
+* Dependencies
+* Directions for running the code and examples
+* Authors
+* License(s)
+
+## Description
 
 This repository was built to represent an example code repository for data analysis in R. This repository is utilized as reference in Best Practices in Scientific Computing (Sanchez et al. Under Review). Following the format of this repository for your analyses will lead to painless QA. 
 
@@ -6,7 +18,7 @@ This repository was built to represent an example code repository for data analy
 
 The following directions will give you the information you need to setup a similar repository. If you don't already have R and R studio on your machine, you will need to install them both if you want to clone this repository and run the example. Install [**R**](https://www.r-project.org/) and [**RStudio**](https://www.rstudio.com/products/rstudio/download/). If you utilize other programming languages/software, make sure those are installed on your machine.
 
-## Setup repository
+## Setup
 
 This is not a R package so you don't need to install anything additional until we get to package dependencies. However, whether (recommended) you create your repository mimicking the setup in this repository or you clone this repository to your local machine and start your new project from there, the setup of your repository is critical.
 
