@@ -50,7 +50,7 @@ sud$weights <- ps_twang$w$ks.max.ATE
 # Outcome model ================================================================
 # specify the complex survey design using the weights generated from the ps
 # model
-design_mod <- svydesign(
+design_mod <- survey::svydesign(
   ids = ~1,
   weights = ~weights,
   data = sud
@@ -59,7 +59,7 @@ design_mod <- svydesign(
 # run outcome model using svyglm. We didn't have any issues with balance but
 # we still are running a doubly robust model to account for any lingering
 # imbalance.
-mod_results <- svyglm(sfs8p_6 ~ treat + sfs8p_0 + eps7p_0 + sfs8p_0 + sati_0 +
+mod_results <- survey::svyglm(sfs8p_6 ~ treat + sfs8p_0 + eps7p_0 + sfs8p_0 + sati_0 +
   ada_0 + recov_0 + tss_0 + dss9_0 + subsgrps_n,
 design = design_mod
 )
@@ -78,7 +78,7 @@ summary(mod_results)
 # variables when estimating causal effects using propensity score (PS) weighting.
 
 # First let's replicate the outcome model that we ran above
-ov_results <- outcome_model(
+ov_results <- OVtool::outcome_model(
   data = sud,
   weights = "weights",
   treatment = "treat",
@@ -95,7 +95,7 @@ ov_results <- outcome_model(
 summary(ov_results$mod_results) # Yay, looks good
 
 # Second we can run the ov analysis
-ovtool_results_twang <- ov_sim(
+ovtool_results_twang <- OVtool::ov_sim(
   model_results = ov_results,
   plot_covariates = c(
     "eps7p_0", "sfs8p_0",
@@ -108,10 +108,10 @@ ovtool_results_twang <- ov_sim(
 )
 
 # Get summary graphics - Figure th
-plot.ov(ovtool_results_twang, print_graphic = "3", col = "color")
+OVtool::plot.ov(ovtool_results_twang, print_graphic = "3", col = "color")
 
 # Get summary text
-summary.ov(ovtool_results_twang, model_results = ov_results)
+OVtool::summary.ov(ovtool_results_twang, model_results = ov_results)
 
 # Print session info at end of file ============================================
 sessionInfo()

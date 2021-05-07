@@ -21,7 +21,7 @@ load("output/sud-forR01.rda")
 # if the variable is category, the levels, # of observations,
 # and the number % of missing observations
 
-ds_screener(sud)
+descriptr::ds_screener(sud)
 
 # with one function we get a lot of information.
 
@@ -31,15 +31,15 @@ ds_screener(sud)
 # those after the data argument:
 
 # Baseline version of our outcome
-ds_summary_stats(sud, sfs8p_0)
+descriptr::ds_summary_stats(sud, sfs8p_0)
 
 # Frequency table - set bins - produce histogram
-baseline_outcome <- ds_freq_table(sud, sfs8p_0, bins = 7)
+baseline_outcome <- descriptr::ds_freq_table(sud, sfs8p_0, bins = 7)
 plot(baseline_outcome)
 
 # Compare distributions
 # baseline version of outcome
-grouped_sfs8p_0 <- ds_group_summary(
+grouped_sfs8p_0 <- descriptr::ds_group_summary(
   data = sud,
   gvar = treat,
   cvar = sfs8p_0
@@ -47,7 +47,7 @@ grouped_sfs8p_0 <- ds_group_summary(
 plot(grouped_sfs8p_0)
 
 # baseline version of outcome
-grouped_sfs8p_0 <- ds_group_summary(
+grouped_sfs8p_0 <- descriptr::ds_group_summary(
   data = sud,
   gvar = treat,
   cvar = sfs8p_0
@@ -73,7 +73,7 @@ sud$treat <- ifelse(sud$treat == "A", 1, 0)
 # that we showed all EDA results.
 
 sud <- sud %>%
-  select(
+  dplyr::select(
     treat, sfs8p_6, sfs8p_0, eps7p_0, sati_0, ada_0,
     recov_0, tss_0, dss9_0, subsgrps_n
   )
