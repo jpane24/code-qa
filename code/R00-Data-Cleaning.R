@@ -54,8 +54,8 @@ sud %>%
   dplyr::group_by(treat) %>%
   dplyr::summarize_all(sum_NAs)
 
-# Note: sncnt and engage are missing in every 100% of observations in
-# treatment B. Analytic decision: Do not impute missing for this analysis...
+# Note: sncnt and engage are missing in 100% of observations in treatment B.
+# Analytic decision: Do not impute missing for this analysis...
 sud <- sud %>%
   dplyr::select(-colnames(var_NAs))
 
