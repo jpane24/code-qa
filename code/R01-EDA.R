@@ -67,7 +67,12 @@ sud <- data.frame(sud)
 # A function in R02-Analysis.R requires we specify the treatment indicator as a
 # binary indicator where 1 indicates the target treatment group and 0 is the
 # other group.
-sud$treat <- ifelse(sud$treat == "A", 1, 0)
+sud <- sud %>%
+  dplyr::mutate(treat = dplyr::case_when(
+    treat == "A" ~ 1,
+    treat == "B" ~ 0,
+    TRUE ~ NA_real_
+  ))
 
 # Only keep the relevant variables in this analysis from our EDA results 
 
