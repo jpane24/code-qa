@@ -69,8 +69,7 @@ sud <- data.frame(sud)
 # other group.
 sud$treat <- ifelse(sud$treat == "A", 1, 0)
 
-# Only keep the relevant variables in this analysis from our EDA results (pretending
-# that we showed all EDA results.
+# Only keep the relevant variables in this analysis from our EDA results 
 
 sud <- sud %>%
   dplyr::select(

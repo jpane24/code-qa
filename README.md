@@ -12,7 +12,7 @@
 
 ## Description
 
-This repository was built to represent an example code repository for data analysis in R. This repository is utilized as reference in Best Practices in Scientific Computing (Sanchez et al., Under Review). Following the format of this repository for your analyses will lead to painless QA. 
+This repository was built to represent an example code repository for data analysis in R. This repository is utilized as reference in Best Practices in Statistical Computing (Sanchez et al., Under Review). Following the format of this repository for your analyses will lead to painless QA. 
 
 ## Installation/Setup Instructions
 
@@ -20,7 +20,7 @@ The following directions will give you the information you need to setup a simil
 
 ## Setup
 
-This is not a R package so you don't need to install anything additional until we get to package dependencies. However, whether (recommended) you create your repository mimicking the setup in this repository or you clone this repository to your local machine and start your new project from there, the setup of your repository is critical.
+This is not an R package so you don't need to install anything additional until we get to package dependencies. However, whether(recommended) you create your repository mimicking the setup in this repository or you clone this repository to your local machine and start your new project from there, the setup of your repository is critical.
 
 Notice that within this repository there are only a few files/folders on the landing page:
 
@@ -44,7 +44,7 @@ The fourth and final file of the landing page is the R project file. This file w
 source("~/Desktop/my-project/code/helper.R")
 ```
 
-...you can use a more robust file referral line of code that will work on anyone's computer that follows this setup:
+you can use a more robust file referral line of code that will work on anyone's computer that follows this setup:
 
 ```
 source("code/helper.R")
@@ -52,13 +52,19 @@ source("code/helper.R")
 
 The code folder contains all code files that are used in the repository.
 
-The file names are setup in a way where it is easy to understand what files should be run first. The analysis files all start with RXX and XX are numbers to show which order they should be run in. R00 comes first and R02 comes last. The other files are helper files that don't need to be run independently necessarily. The helper.R file is a file that contains all of the helper functions used throughout the RXX series. This file is loaded at the top of the R00 analysis file. The synth-creation.R file is a bonus file that shows how one may create synthetic data. Finally, the run_full.R will run the entire analysis RXX series at once. Running this file should produce no warnings or errors and is a good way to check and make sure your code is working correctly.
+The file names are setup in a way where it is easy to understand what files should be run first. The analysis files all start with RXX and XX are numbers to show which order they should be run in. R00 comes first and R02 comes last. The other files are helper files that don't necessarily need to be run independently. The helper.R file is a file that contains all of the helper functions used throughout the RXX series. This file is loaded at the top of the R00 analysis file. The synth-creation.R file is a bonus file that shows how one may create synthetic data. Finally, the run_full.R will run the entire analysis RXX series at once. Running this file should produce no warnings or errors and is a good way to check and make sure your code is working correctly.
 
-If a user wishes to run the files interactively they may but will need to run the RXX series in order for everything to run properly.
+If a user wishes to run the files interactively they will need to run the RXX series in order for everything to run properly.
 
 ## Dependencies
 
-The dependencies to run your repository may be different. For this repository, the dependencies are all R packages. In the order that they are used and loaded in the file succession are:
+The dependencies to successfully run the code in your repository may be different. For this repository there are two sets of dependencies. The first set of dependencies are a series of R packages that must be installed on your machine. If a package is not installed in your version of R, you can install them using the following R function and replacing my_package_name with the R package you wish to install.
+
+```
+install.packages("my_package_name")
+```
+
+For this repository, the following packages should be installed and loaded into your R session. The RXX files contain library calls in the following order:
 
 ```
 library(tidyverse)
@@ -68,11 +74,7 @@ library(twang)
 library(survey)
 ```
 
-If these packages are not installed in your version of R, you can install them using the following R function and replacing my_package_name with the R package you wish to install.
-
-```
-install.packages("my_package_name")
-```
+The second "set" of dependencies is to ensure that a user runs the programs in the correct order. If a user wishes to work through R02-Analysis.R, the user must have already run the R00 and R01 files in order.
 
 ## Directions for running the code and examples
 

@@ -34,7 +34,7 @@ sud <- sud %>%
   dplyr::mutate(subsgrps_n = case_when(
     subsgrps_n == 1 ~ "Alc-Marij-Disorder",
     subsgrps_n == 2 ~ "Other-Drugs",
-    subsgrps_n == 3 ~ "Opirate-Disorder",
+    subsgrps_n == 3 ~ "Opioid-Disorder",
     TRUE ~ NA_character_
   )) %>%
   mutate_if(is.character, as.factor)
