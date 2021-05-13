@@ -4,6 +4,9 @@
 # data input: imputed-gain-data.csv
 # data output: synthetic_dataset.csv
 
+# Print session info at beginning of file ======================================
+sessionInfo()
+
 # Load packages ================================================================
 library(tidyverse)
 library(synthpop)
@@ -88,11 +91,11 @@ ds_1 <- ds_1 %>%
     TRUE ~ NA_character_
   ))
 
-# Data checks: Make no observation is repeated  ================================
+# Data checks: Make sure no observation is repeated  ===========================
 data_all <- dplyr::bind_rows(ds_1, ds_syn)
 nrow(data_all) == nrow(unique(data_all))
 
-# Shuffle rows + create final file to be outputted  ===========================
+# Shuffle rows + create final file to be outputted  ============================
 set.seed(2020)
 # Shuffle rows
 ds_syn_final <- ds_syn[sample(nrow(ds_syn)), ]
@@ -104,4 +107,8 @@ ds_syn_final <- ds_syn_final %>%
   dplyr::ungroup() %>%
   data.frame()
 
+# Save synthetic data file   ===================================================
 readr::write_csv(ds_syn_final, "data/synthetic_dataset.csv")
+
+# Print session info at end of file ============================================
+sessionInfo()

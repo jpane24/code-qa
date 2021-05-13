@@ -69,8 +69,8 @@ summary(mod_results)
 
 # Note: we have a significant treatment effect.
 # From the results, we observe that the estimated treatment effect is
-# significantly negative, whereby youth receiving treatment A have slightly
-# higher lower problems at the 3-month follow-up than youth in treatment
+# significantly negative, whereby youth receiving treatment A have
+# lower problems at the 6-month follow-up than youth in treatment
 # program B.
 
 # Sensitivity analysis =========================================================
@@ -107,7 +107,10 @@ ovtool_results_twang <- OVtool::ov_sim(
   progress = TRUE
 )
 
-# Get summary graphics - Figure th
+# Get summary graphics - Figure 3 (print_graphic= "3") shows the treatment 
+# effect contours with p-value contours overlaid and covariate labels 
+# (i.e. the column names submitted to plot_covariates) plotted by their raw rho 
+# and effect size.
 OVtool::plot.ov(ovtool_results_twang, print_graphic = "3", col = "color")
 
 # Get summary text
