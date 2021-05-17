@@ -1,11 +1,27 @@
-# code-qa commit: 371c91bcda433052162115e51e0aa5738fb1b46e
+# 3. code-qa commit: 371c91b
 
-## Improvements
+##### Improvements
 
-* utilize `styler` package to clean up indenting
+* Efficiencies/robustness to code added in code review by Ricky Sanchez
 
-## Bug fixes
+##### Bug fixes
 
 * None
 
-# code-qa initial commit: 59ef09df7d41ba1065608b48bab5824fc36a549e
+\newline
+
+# 2. code-qa commit: 371c91b
+
+##### Improvements
+
+* utilize `styler` package to clean up indenting
+
+##### Bug fixes
+
+* None
+
+\newline
+
+# 1. code-qa initial commit: 59ef09d
+
+* The initial commit of the repository
