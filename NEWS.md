@@ -8,8 +8,6 @@
 
 * None
 
-\newline
-
 # 2. code-qa commit: 371c91b
 
 ##### Improvements
@@ -19,8 +17,6 @@
 ##### Bug fixes
 
 * None
-
-\newline
 
 # 1. code-qa initial commit: 59ef09d
 
